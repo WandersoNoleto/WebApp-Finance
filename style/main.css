@@ -141,8 +141,16 @@ header{
 }
 
 .card.total{
-    background-color: var(--green);
+    background-color: var(--dark-blue);
     color: white;
+}
+
+.card.total.plus {
+    background-color: #12a454;
+}
+
+.card.total.minus {
+    background-color: #e92929;
 }
 
 /* =======Balance======= */
