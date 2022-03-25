@@ -1,3 +1,5 @@
+
+//Não concluído - verificar Aula 03 => 02:54:10
 const Modal = {
     open(){
         document
@@ -11,6 +13,17 @@ const Modal = {
     }
 }
 
+//Armazenar dados no localStorage
+const Storage = {
+    get(){
+        return JSON.parse(localStorage.getItem("dev.finances:transactions")) 
+        || []
+    },
+    set(transactions){
+        localStorage.setItem("dev.finances:transactions",
+        JSON.stringify(transactions))
+    }
+}
 //Alterar a cor do card total de acordo com o montante final :
 // Negativo - vermelho
 // Positivo - verde 
@@ -28,22 +41,8 @@ const DisplayTotal = {
  }
 
 const Transaction = {
-    all: [
-        {
-            description: 'Luz', 
-            amount: -48729, 
-            date: '23/01/2021',
-        }, 
-        {
-            description: 'Frelancer', 
-            amount: 500000, 
-            date: '21/01/2021',
-        },
-        {
-            description: 'Internet', 
-            amount: -12000,
-            date: '20/01/2021',
-        }],
+    all: Storage.get(),
+
     //Adicionar transação à tabela
     add(transaction){
         Transaction.all.push(transaction)
@@ -92,7 +91,9 @@ const Transaction = {
 }
 
 
-//Formatar moeda para o padrão R$ (real)
+//Formatar moeda para o padrão R$ (real),
+//Valor recebido no formulário para numero,
+//Data para o padrão dia/mes/ano
 const Utils = {
     formatCurrency(value){
         const signal = Number(value) < 0 ? "- " : "+ "
@@ -111,7 +112,15 @@ const Utils = {
     },
 
     formatAmount(value){
-        console.log(value)
+        value = Number(value.replace(/\,\./g, "")) * 100
+        //value = Number(value) * 100 - alternativa
+        
+        return value
+    },
+
+    formatDate(date){
+        const splittedDate = date.split("-")
+        return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
     }
 }
 
@@ -122,12 +131,13 @@ const DOM = {
 
     addTransaction(transaction, index){
         const tr = document.createElement('tr')
-        tr.innerHTML = DOM.innerHtmltransaction(transaction)
+        tr.innerHTML = DOM.innerHtmltransaction(transaction, index)
+        tr.dataset.index = index
 
         DOM.transactionsContainer.appendChild(tr)
     },
 
-    innerHtmltransaction(transaction){
+    innerHtmltransaction(transaction, index){
         const CSSclass = transaction.amount > 0 ? "income" : "expense"
 
          //Chamando formatação
@@ -137,7 +147,7 @@ const DOM = {
             <td class="description">${transaction.description}</td>
             <td class="${CSSclass}">${amount}</td>
             <td class="date">${transaction.date}</td>
-            <td><img src="/assets/minus.svg" alt="Remover transação"></td>
+            <td><img onclick="Transaction.remove(${index})" src="/assets/minus.svg" alt="Remover transação"></td>
             `
         return html
     },
@@ -167,9 +177,7 @@ const DOM = {
 const App = {
     init() { 
         //Criando a tabela inicial
-        Transaction.all.forEach(transaction => {
-            DOM.addTransaction(transaction)
-        })
+        Transaction.all.forEach(DOM.addTransaction)
 
         DOM.updateBalance()
 

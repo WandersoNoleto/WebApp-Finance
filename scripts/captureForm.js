@@ -11,11 +11,6 @@ const Form = {
             date: Form.date.value
         }
     },
-
-    //Formatar dados inseridos
-    formatData(){
-
-    },
    
     //Validar informações dos campos do modal
     validateField(){
@@ -28,19 +23,41 @@ const Form = {
         }
     },
 
+    //Formatar dados inseridos
     formatValues(){
         let { description, amount, date} = Form.getValues()
 
         amount = Utils.formatAmount(amount)
+
+        date = Utils.formatDate(date)
+
+        return{
+            description,
+            amount,
+            date
+        }
     },
 
-    submit(event){3
+    clearFields(){
+        Form.description.value = ""
+        Form.amount.value = ""
+        Form.date.value = ""
+    },
+
+
+    submit(event){
         event.preventDefault() //retirar comportamento padrão de submit para aplicar os procedimentos desejados 
      
         try {
             Form.validateField()
 
-            Form.formatValues()
+            //receber a nova transação e formatar os valores recebidos
+            const transaction = Form.formatValues()
+            Transaction.add(transaction)
+
+            //Limpar dados dos campos e encerrar modal
+            Form.clearFields()
+            Modal.close()
 
 
         } catch (Error){
