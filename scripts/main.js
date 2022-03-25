@@ -21,44 +21,48 @@ const DisplayTotal = {
             .classList.add('plus')
     },
     minus(){
-        document
-        .querySelector('.card.total')
-        .classList.add('minus')
+         document
+         .querySelector('.card.total')
+         .classList.add('minus')
     }
-}
-
-
-const transactions = [
-    {
-        id: 1, 
-        description: 'Luz', 
-        amount: -50000, 
-        date: '23/01/2021',
-    }, 
-    {
-        id: 2, 
-        description: 'Frelancer', 
-        amount: 500000, 
-        date: '21/01/2021',
-    },
-    {
-        id: 3, 
-        description: 'Internet', 
-        amount: -20000,
-        date: '20/01/2021',
-    }]
-
+ }
 
 const Transaction = {
-    all: transactions,
+    all: [
+        {
+            description: 'Luz', 
+            amount: -48729, 
+            date: '23/01/2021',
+        }, 
+        {
+            description: 'Frelancer', 
+            amount: 500000, 
+            date: '21/01/2021',
+        },
+        {
+            description: 'Internet', 
+            amount: -12000,
+            date: '20/01/2021',
+        }],
+    //Adicionar transação à tabela
     add(transaction){
-        transaction.all.push(transaction)
+        Transaction.all.push(transaction)
+
+        App.reload()
     },
 
+    //Remover transação da tabela
+    remove(index){
+        Transaction.all.splice(index,1)
+
+        App.reload()
+    },
+
+    //Calcular valores dos Cards
     incomes(){ //somar entradas
         let income = 0;
         
-        transactions.all.forEach(transaction => {
+        Transaction.all.forEach(transaction => {
             if(transaction.amount > 0){
                 income += transaction.amount;
             }
@@ -69,7 +73,7 @@ const Transaction = {
     expenses(){ //somar saídas
         let expense = 0;
         
-        transactions.all.forEach(transaction => {
+        Transaction.all.forEach(transaction => {
             if(transaction.amount < 0){
                 expense += transaction.amount;
             }
@@ -87,6 +91,7 @@ const Transaction = {
     }
 }
 
+
 //Formatar moeda para o padrão R$ (real)
 const Utils = {
     formatCurrency(value){
@@ -103,6 +108,10 @@ const Utils = {
         })
 
         return signal+value
+    },
+
+    formatAmount(value){
+        console.log(value)
     }
 }
 
@@ -114,8 +123,6 @@ const DOM = {
     addTransaction(transaction, index){
         const tr = document.createElement('tr')
         tr.innerHTML = DOM.innerHtmltransaction(transaction)
-
-        console.log(tr.innerHTML)
 
         DOM.transactionsContainer.appendChild(tr)
     },
@@ -151,12 +158,31 @@ const DOM = {
         } else if (Transaction.total() < 0){
             DisplayTotal.minus();
         }
+    },
+    clearTransaction(){
+            DOM.transactionsContainer.innerHTML = ""
     }
 }
 
-//Criando a tabela inicial
-transactions.forEach(function(transaction){
-    DOM.addTransaction(transaction)
-})
+const App = {
+    init() { 
+        //Criando a tabela inicial
+        Transaction.all.forEach(transaction => {
+            DOM.addTransaction(transaction)
+        })
 
-DOM.updateBalance()
+        DOM.updateBalance()
+
+    },
+    reload(){
+        DOM.clearTransaction()
+        App.init()
+    }
+    
+}
+
+App.init()
+
+
+
+
