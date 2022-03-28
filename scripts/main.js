@@ -32,11 +32,23 @@ const DisplayTotal = {
         document
             .querySelector('.card.total')
             .classList.add('plus')
+        document
+            .querySelector('.card.total')
+            .classList.remove('minus')
     },
     minus(){
          document
-         .querySelector('.card.total')
-         .classList.add('minus')
+            .querySelector('.card.total')
+            .classList.add('minus')
+        document
+            .querySelector('.card.total')
+            .classList.remove('plus')
+    },
+    normal(){
+        document
+            .querySelector('.card.total')
+            .classList.remove('plus') || document
+            .querySelector('.card.total').classList.remove('minus')
     }
  }
 
@@ -165,8 +177,10 @@ const DOM = {
         
         if(Transaction.total() > 0) {
             DisplayTotal.plus();
-        } else if (Transaction.total() < 0){
+        } if (Transaction.total() < 0){
             DisplayTotal.minus();
+        } else if(Transaction.total() == 0){
+            DisplayTotal.normal();
         }
     },
     clearTransaction(){
