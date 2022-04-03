@@ -16,6 +16,7 @@
         <div class="sidebar">
             <div class="logo_content">
                 <div class="logo">
+
                     <img id="logoIcon" src="/assets/logo1.png" alt="Logo do app">
                     <div class="logo_name">C<span>.</span>finance</div>
                 </div>
@@ -25,8 +26,8 @@
             <!-- Menu Lateral -->
             <ul class="nav-list">
                 <li><a href="#">
-                        <img src="/assets/bxs-bank.svg" alt="Visão financeira geral">
-                        <span class="links_name">Balanço</span></a></li>
+                        <img id="iconSvg" src="/assets/bxs-bank.svg" alt="Visão financeira geral">
+                        <span class="links_name">Visão Geral</span></a></li>
                 <li>
                     <a href="#">
                         <img src="/assets/bxs-wallet.svg" alt="Metas/projetos">
@@ -35,6 +36,8 @@
                         <img src="/assets/bx-money.svg" alt="Conversor de Moeda">
                         <span class="links_name">Conversor</span></a></li>
             </ul>
+
+            <p id="version">version 1.3.4</p>
 
             <div class="profile_content">
                 <div class="profile">
@@ -48,6 +51,63 @@
         </div>
         <!-- Fim Menu -->
     </header>
+
+    <main class="container">
+        <section id="balance">
+            <div class="totalBox">
+                <div class="cardTotal">
+                    <h3>
+                        <span>Total</span>
+                    </h3>
+                    <p id="totalDisplay">R$ 0,00</p>
+                </div>
+                
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>
+                        <span>Entradas</span>
+                        </h3>
+                    <p id="incomeDisplay">R$ 0,00</p>
+                </div>
+    
+                <div class="card">
+                    <h3>
+                        <span>Saídas</span>
+                    </h3>
+                    <p id="expenseDisplay">R$ 0,00</p>
+                </div>
+    
+                <div class="card">
+                    <h3>
+                        <span>Reservado</span>
+                        </h3>
+                    <p id="reservedDisplay">R$ 0,00</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="secondMain">
+            <section class="transactions">           
+
+                <a href="#" onclick="Modal.open()" class="button new">+ Nova transação</a>
+    
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Data</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table></section>
+
+            <section class="graphic"></section>
+        </div>
+
 
     </main>
   </body>

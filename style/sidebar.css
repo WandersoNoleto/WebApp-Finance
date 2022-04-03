@@ -9,7 +9,6 @@
 
 /* ======Menu Lateral====== */
 
-
 #logoIcon{
     width: 2rem;
     height: 2rem;
@@ -27,6 +26,7 @@ header{
     position: relative;
     min-height: 100vh;
     overflow: hidden;
+    width: 18.3vw;
 }
 
 .sidebar{
@@ -34,8 +34,8 @@ header{
     top: 0;
     left: 0;
     height: 100%;
-    width: 15rem;
-    background: #022909;
+    width: 18.3%;
+    background: #021405;
     padding: 0.38rem 0.88rem;
     box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.40);
 }
@@ -91,7 +91,7 @@ header{
 
 
 .sidebar ul li a{
-    color: #b8daa9;
+    color: #8eb97c;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -120,11 +120,6 @@ header{
     margin-left: 0.31rem;
 }
 
-#iconSvg a:hover path{
-    fill: #f79647;
-}
-
-
 .sidebar .profile_content{
     position: absolute;
     color: #fff;
@@ -138,6 +133,7 @@ header{
 
 .sidebar .profile_content .profile{
     position: relative;
+    display: flex;
     padding: 0.62rem 0.37rem;
     height: 3.75rem;
     background: #031f04;
@@ -146,6 +142,7 @@ header{
 .profile_content .profile .profile_details{
    display: flex;
    align-items: center;
+
 
 }
 
@@ -165,12 +162,22 @@ header{
 .profile #log_out{
     position: absolute;
     left: 88%;
+    top: 35%;
     bottom: 0.31rem;
     transform: translateX(-50%);
-    min-width: 2.5rem;
+    min-width: 1.5rem;
     line-height: 2.5rem;
     font-size: 1.25rem;
     border-radius: 0.75rem;
+}
+
+#version{
+    color: #8fb695;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 4rem;
+    left: 5rem;
+    opacity: 0.5;   
 }
 
 /* ======Header====== */
