@@ -13,6 +13,7 @@
   </head>
   <body>
     <header>
+         <!-- Menu Lateral -->
         <div class="sidebar">
             <div class="logo_content">
                 <div class="logo">
@@ -23,7 +24,7 @@
                 <img src="/assets/bx-menu.svg" id="btn"></i>
             </div>
 
-            <!-- Menu Lateral -->
+           
             <ul class="nav-list">
                 <li><a href="#">
                         <img id="iconSvg" src="/assets/bxs-bank.svg" alt="Visão financeira geral">
@@ -89,26 +90,57 @@
         </section>
 
         <div class="secondMain">
-            <section class="transactions">           
-
-                <a href="#" onclick="Modal.open()" class="button new">+ Nova transação</a>
-    
+            <section class="transactions">               
                 <table id="data-table">
                     <thead>
                         <tr>
                             <th>Descrição</th>
                             <th>Valor</th>
                             <th>Data</th>
-                            <th></th>
+                            <th><span onclick="Modal.open()" id="addButton">+</span></th>
                         </tr>
                     </thead>
                     <tbody></tbody>
-                </table></section>
+                </table>
+            </section>
 
-            <section class="graphic"></section>
+            <div class="modal-overlay register">
+                <div class="modalRegister">
+                    <div id="form">
+                        <h2>Nova Transação</h2>
+                        <form action="" onsubmit="Form.submit(event)" >
+                            <div class="input-group">
+                                <label class="sr-only" for="description">Descrição</label>
+                                <input type="text" id="description" name="description" placeholder="Descrição">
+                            </div>
+                            <div class="input-group">
+                                <label class="sr-only" for="description">Valor</label>
+                                <input type="number" id="amount" step="0.01" name="amount" placeholder="Valor">
+                                <small class="help">Use o sinal - (negativo) para despesas e , para as casas decimais</small>
+                            </div>
+                            <div class="input-group">
+                                <label class="sr-only" for="description">Data</label>
+                                <input type="date" id="date" name="date" >
+                            </div>
+        
+                            <div class="input-group actions">
+                                <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+                                <button>Salvar</button>
+                            </div> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
+
+            <!-- <section class="graphic"></section> -->
         </div>
 
 
     </main>
+
+
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/captureForm.js"></script>
   </body>
 </html>

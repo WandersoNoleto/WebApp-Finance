@@ -159,7 +159,7 @@ const DOM = {
             <td class="description">${transaction.description}</td>
             <td class="${CSSclass}">${amount}</td>
             <td class="date">${transaction.date}</td>
-            <td><img onclick="Transaction.remove(${index})" src="/assets/minus.svg" alt="Remover transação"></td>
+            <td><span id="lineRemove" onclick="Transaction.remove(${index})">x</span></td>
             `
         return html
     },

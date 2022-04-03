@@ -91,7 +91,8 @@ header{
 
 
 .sidebar ul li a{
-    color: #8eb97c;
+    color: rgba(255, 255, 255, 0.9);
+    /* color: #8eb97c; */
     font-weight: 700;
     display: flex;
     align-items: center;
