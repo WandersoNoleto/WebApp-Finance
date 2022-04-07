@@ -61,8 +61,8 @@ body{
 }
 
 .cardTotal{
-    background-color: #4fa12e;
-    color: white;
+    background-color: #fff;
+    color: black;
     box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.1);
 
     padding: 1.5rem 5rem 1rem 1rem;
@@ -87,11 +87,17 @@ body{
     margin-top: 0.7rem;
 }
 
-/* ======PartII-Main====== */
-
-.graphic{
-    background-color: blue;
+.cardTotal.plus{
+    background-color: #4fa12e;
+    color: white;
 }
+
+.cardTotal.minus{
+    background-color: #ce1e1e;
+    color: white;
+}
+
+/* ======PartII-Main====== */
 
 .secondMain{
     display: flex;
@@ -178,6 +184,10 @@ table tbody tr td:last-child{
     color: #e92929;
 }
 
+#reservedDisplay{
+    color: #4646d6;
+}
+
 
 /* =======Links&Buttons======= */
 a{
@@ -230,9 +240,19 @@ button{
     cursor: pointer;
 }
 
- button:hover{
+.button.save{
+    background-color: #4fa12e;
+}
+
+ button.save:hover{
     background: #3dd705;
  }
+
+ .buttonsModal{
+    display: flex;
+
+ }
+
 
 
 /* =======Modal======= */

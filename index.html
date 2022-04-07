@@ -104,7 +104,7 @@
                 </table>
             </section>
 
-            <div class="modal-overlay register">
+            <div class="modal-overlay register" id="overlay">
                 <div class="modalRegister">
                     <div id="form">
                         <h2>Nova Transação</h2>
@@ -116,6 +116,9 @@
                             <div class="input-group">
                                 <label class="sr-only" for="description">Valor</label>
                                 <input type="number" id="amount" step="0.01" name="amount" placeholder="Valor">
+                                <div class="buttonsModal">
+                                    
+                                </div>
                                 <small class="help">Use o sinal - (negativo) para despesas e , para as casas decimais</small>
                             </div>
                             <div class="input-group">
@@ -125,7 +128,7 @@
         
                             <div class="input-group actions">
                                 <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
-                                <button>Salvar</button>
+                                <button class="button save">Salvar</button>
                             </div> 
                         </form>
                     </div>
