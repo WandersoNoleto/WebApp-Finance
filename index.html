@@ -1,149 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finance</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$Sorynn</title>
 
-    <link rel="stylesheet" href="/style/main.css">
     <link rel="stylesheet" href="/style/sidebar.css">
 
-
-  </head>
-  <body>
-    <header>
-         <!-- Menu Lateral -->
-        <div class="sidebar">
-            <div class="logo_content">
-                <div class="logo">
-
-                    <img id="logoIcon" src="/assets/logo1.png" alt="Logo do app">
-                    <div class="logo_name">C<span>.</span>finance</div>
-                </div>
-                <img src="/assets/bx-menu.svg" id="btn"></i>
-            </div>
-
-           
-            <ul class="nav-list">
-                <li><a href="#">
-                        <img id="iconSvg" src="/assets/bxs-bank.svg" alt="Visão financeira geral">
-                        <span class="links_name">Visão Geral</span></a></li>
-                <li>
-                    <a href="#">
-                        <img src="/assets/bxs-wallet.svg" alt="Metas/projetos">
-                        <span class="links_name">Projetos</span></a></li>
-                <li><a href="#">
-                        <img src="/assets/bx-money.svg" alt="Conversor de Moeda">
-                        <span class="links_name">Conversor</span></a></li>
-            </ul>
-
-            <p id="version">version 1.3.4</p>
-
-            <div class="profile_content">
-                <div class="profile">
-                    <div class="profile_details">
-                        <img src="/assets/ProfileScroogeDuck.jpg" alt="Foto de usuário">
-                        <div class="name">Scrooge McDuck</div>
-                    </div>
-                    <img id="log_out" src="/assets/bx-log-out.svg" alt="Sair do Perfil">
-                </div>
-            </div>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <img src="/assets/LogoFinance.svg.svg" alt="Logo APP">
+            <span class="logo-name">CodingLab</span>
         </div>
-        <!-- Fim Menu -->
-    </header>
+        <ul class="nav-links">
+            <li><a href="#"><img src="/assets/bankHome.svg" alt="HomeIcon" class="menuIcons"></a></li>
+            <li><a href="#"><img src="/assets/Goals.svg" alt="" class="menuIcons"></a></li>
+            <li><a href="#"><img src="/assets/money-converter.svg" alt="Conversor" class="menuIcons"></a></li>
+            <li><a href="#"><img src="/assets/settingsIcon.svg" alt="Configurações" class="menuIcons"></a></li>
 
-    <main class="container">
-        <section id="balance">
-            <div class="totalBox">
-                <div class="cardTotal">
-                    <h3>
-                        <span>Total</span>
-                    </h3>
-                    <p id="totalDisplay">R$ 0,00</p>
-                </div>
-                
-            </div>
-
-            <div class="cards">
-                <div class="card">
-                    <h3>
-                        <span>Entradas</span>
-                        </h3>
-                    <p id="incomeDisplay">R$ 0,00</p>
-                </div>
-    
-                <div class="card">
-                    <h3>
-                        <span>Saídas</span>
-                    </h3>
-                    <p id="expenseDisplay">R$ 0,00</p>
-                </div>
-    
-                <div class="card">
-                    <h3>
-                        <span>Reservado</span>
-                        </h3>
-                    <p id="reservedDisplay">R$ 0,00</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="secondMain">
-            <section class="transactions">               
-                <table id="data-table">
-                    <thead>
-                        <tr>
-                            <th>Descrição</th>
-                            <th>Valor</th>
-                            <th>Data</th>
-                            <th><span onclick="Modal.open()" id="addButton">+</span></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </section>
-
-            <div class="modal-overlay register" id="overlay">
-                <div class="modalRegister">
-                    <div id="form">
-                        <h2>Nova Transação</h2>
-                        <form action="" onsubmit="Form.submit(event)" >
-                            <div class="input-group">
-                                <label class="sr-only" for="description">Descrição</label>
-                                <input type="text" id="description" name="description" placeholder="Descrição">
-                            </div>
-                            <div class="input-group">
-                                <label class="sr-only" for="description">Valor</label>
-                                <input type="number" id="amount" step="0.01" name="amount" placeholder="Valor">
-                                <div class="buttonsModal">
-                                    
-                                </div>
-                                <small class="help">Use o sinal - (negativo) para despesas e , para as casas decimais</small>
-                            </div>
-                            <div class="input-group">
-                                <label class="sr-only" for="description">Data</label>
-                                <input type="date" id="date" name="date" >
-                            </div>
-        
-                            <div class="input-group actions">
-                                <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
-                                <button class="button save">Salvar</button>
-                            </div> 
-                        </form>
-                    </div>
-                </div>
-            </div>
-        
-
-            <!-- <section class="graphic"></section> -->
-        </div>
-
-
-    </main>
-
-
-    <script src="/scripts/main.js"></script>
-    <script src="/scripts/captureForm.js"></script>
-  </body>
+        </ul>
+    </div>
+</body>
 </html>
