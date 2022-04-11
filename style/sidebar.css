@@ -42,12 +42,42 @@
 
 }
 
+/* ======MainMenu====== */
 
 .menuIcons{
     height: 1.5rem;
     width: 1.5rem;
 }
-/* ======MainMenu====== */
+
+.sidebar .nav-links{
+    background: red;
+    height: 100%;
+    padding-top: 1.9rem;
+}
+
+.sidebar .nav-links li{
+    position: relative;
+    list-style: none;
+    display: flex;
+    text-align: center; 
+}
+
+.sidebar .nav-links li img{
+    min-width: 4.3rem;
+    text-align: center;
+    line-height: 0.4rem;
+}
+
+.sidebar .nav-links li a{
+   text-decoration: none;
+}
+
+.sidebar .nav-links li a .link-name{
+    font-size: 1.1rem;
+    font-weight: 25rem;
+    color: white;
+}
+
 
 
 /* ======Profile====== */
