@@ -50,9 +50,12 @@
 }
 
 .sidebar .nav-links{
-    background: red;
     height: 100%;
     padding-top: 1.9rem;
+}
+
+.sidebar .link-name{
+    padding: 0.3rem;
 }
 
 .sidebar .nav-links li{
@@ -66,10 +69,14 @@
     min-width: 4.3rem;
     text-align: center;
     line-height: 0.4rem;
+    font-size: 1.25rem;
 }
 
 .sidebar .nav-links li a{
-   text-decoration: none;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+
 }
 
 .sidebar .nav-links li a .link-name{
@@ -81,3 +88,28 @@
 
 
 /* ======Profile====== */
+
+.sidebar .profile-details {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar .profile-details img{
+    height: 3.25rem;
+    width: 3.25rem;
+
+    object-fit: cover;
+    border-radius: 1rem;
+    margin: 0 0.87rem 0 0.75rem;
+    padding:  0.61rem;
+
+    background: #1d1b31;
+}
+
+.sidebar .profile-details .profile-name,
+.sidebar .profile-details .job{
+    color: white;
+}
