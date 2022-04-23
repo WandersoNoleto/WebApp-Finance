@@ -1,5 +1,15 @@
+/* ======Global===== */
+
 body{
-    background: rgb(185, 172, 172);
+    display: flex;
 }
 
-/* Time 07:56 */
+header{
+    width: 20vw;
+}
+
+main{
+    width: 81vw;
+    height: 100vh;
+    right: 0;
+}

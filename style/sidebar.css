@@ -24,6 +24,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+
 }
 
 
@@ -92,12 +93,25 @@
 .sidebar .profile-details {
     position: fixed;
     bottom: 0;
+    width: 16.25rem;
+
+    border-top: 0.5px solid #394066;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    background: #0d0c18;
+    padding: 0.3rem 0;
 }
 
-.sidebar .profile-details img{
+.sidebar .profile-details .profile-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .profile-details #photoProfile{
     height: 3.25rem;
     width: 3.25rem;
 
@@ -112,4 +126,14 @@
 .sidebar .profile-details .profile-name,
 .sidebar .profile-details .job{
     color: white;
+    font-size: 1.12rem;
+    font-weight: 500;
+}
+
+.sidebar .profile-details .job{
+    font-size: 0.75rem;
+}
+
+.sidebar .profile-details #logOut{
+    margin-right: 1rem;
 }
