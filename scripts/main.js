@@ -30,25 +30,25 @@ const Storage = {
 const DisplayTotal = {
     plus(){
         document
-            .querySelector('.cardTotal')
+            .querySelector('.card.total')
             .classList.add('plus')
         document
-            .querySelector('.cardTotal')
+            .querySelector('.card.total')
             .classList.remove('minus')
     },
     minus(){
          document
-            .querySelector('.cardTotal')
+            .querySelector('.card.total')
             .classList.add('minus')
         document
-            .querySelector('.cardTotal')
+            .querySelector('.card.total')
             .classList.remove('plus')
     },
     normal(){
         document
-            .querySelector('.cardTotal')
+            .querySelector('.card.total')
             .classList.remove('plus') || document
-            .querySelector('.cardTotal').classList.remove('minus')
+            .querySelector('.card.total').classList.remove('minus')
     }
  }
 
