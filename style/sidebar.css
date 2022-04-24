@@ -7,6 +7,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
 .sidebar{
     position: fixed;
     top: 0;
@@ -63,7 +64,7 @@
     position: relative;
     list-style: none;
     display: flex;
-    text-align: center; 
+    text-align: center;
 }
 
 .sidebar .nav-links li img{
@@ -84,6 +85,8 @@
     font-size: 1.1rem;
     font-weight: 25rem;
     color: white;
+    /* color: #b3b6c2 */
+
 }
 
 
