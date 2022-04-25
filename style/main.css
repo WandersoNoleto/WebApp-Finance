@@ -67,7 +67,8 @@ main{
 
 .charts{
     border: 1px solid rgb(56, 28, 133);
-    width: 40%;
+    width: 38%;
+    height: 95%;
     right: 0;
 }
 
@@ -174,18 +175,53 @@ main{
     display: flex;
     justify-content: center;
 }
-/* =======Table======= */
 
-#transaction{
-    display: block;
-    width: 100%;
-    overflow-x: auto;
+.headerTransactions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
+
+
+.transactions{
+    width: 90%;
+    height: 95%;
+    overflow-x: auto;
+    
+    background: white;
+    
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.1);
+}
+
+
+#recentTransaction{
+    color: #1d1b31;
+    font-size: 1rem;
+    font-weight: 600;
+
+    display: inline-block;
+    margin: 1rem 0 0 1rem;
+}
+
+#btnTransactions{
+    background: #2316b1;
+
+    width: 6rem;
+    height: 2rem;
+
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+/* =======Table======= */
 
 #data-table{
     border-spacing: 0 0.5rem;
-    color: #969cb3;
-    width: 35rem;
+    color: #1d1b31;
+    width: 34rem;
+    padding-left: 1rem;
 }
 
 #addButton{
@@ -221,18 +257,9 @@ table tbody tr:hover{
     opacity: 1;
 }
 
-table thead tr th:first-child,
-table tbody tr td:first-child{
-    border-radius: 0.7rem 0 0 0.7rem;
-}
-
-table thead tr th:last-child,
-table tbody tr td:last-child{
-    border-radius: 0 0.7rem 0.7rem 0;
-}
-
-.descpition{
-    color: var(--dark-blue);
+table tbody tr th,
+table tbody tr td{
+    border-bottom: 1px solid #2d2e3a;
 }
 
 #lineRemove{
