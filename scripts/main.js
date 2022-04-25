@@ -76,6 +76,7 @@ const Transaction = {
         Transaction.all.forEach(transaction => {
             if(transaction.amount > 0){
                 income += transaction.amount;
+                document.getElementById('incomeDisplay').classList.add('income')
             }
         })
 
@@ -87,6 +88,7 @@ const Transaction = {
         Transaction.all.forEach(transaction => {
             if(transaction.amount < 0){
                 expense += transaction.amount;
+                document.getElementById('expenseDisplay').classList.add('expense')
             }
         })
         
@@ -119,8 +121,8 @@ const Utils = {
             style: "currency",
             currency: "BRL"
         })
+            return signal+value
 
-        return signal+value
     },
 
     formatAmount(value){
